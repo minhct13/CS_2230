@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h3 class="heading">CS 419 - visual information retrieval</h3>
+
+        <input type="text" placeholder="search images" id="search-box">
+        
+        <input id="uploadImage" type="file" name="queryImage" onchange="PreviewImage();" />
+        <img id="uploadPreview"  />
+
+        <div class="image-container">
+            <!-- <div class="image" data-title="cute">
+                <img src="images/1.jpg" alt="">
+                <h3>cute</h3>
+            </div>
+
+            <div class="image" data-title="cute">
+                <img src="images/1.jpg" alt="">
+                <h3>cute</h3>
+            </div>
+
+            <div class="image" data-title="cute">
+                <img src="images/1.jpg" alt="">
+                <h3>cute</h3>
+            </div> -->
+            
+            
+        </div>
+    </div>
+  <script type="text/javascript">
+      function PreviewImage() {
+          var oFReader = new FileReader();
+          oFReder.readAsDataURL(document.getElementById("uploadImage").files[0]);
+  
+          oFReader.onload = function (oFREvent) {
+              document.getElementById("uploadPreview").src = oFREvent.target.result;
+          };
+      };
+  
+  </script>
+
+<!-- <script>
+  let searchBox = document.querySelector('#search-box');
+  let images = document.querySelectorAll('.container .image-container .image');
+
+  searchBox.oninput = () =>{
+    images.forEach(hide => hide.style.display = 'none');
+    let value = searchBox.value;
+    images.forEach(filter =>{
+      let title = filter.getAttribute('data-title');
+      if(title == value){
+        filter.style.display='block';
+      }
+      if(searchBox.value==''){
+        filter.style.display='block';
+      }
+    });
+  };
+</script> -->
+</body>
+</html>
