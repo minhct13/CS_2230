@@ -13,15 +13,9 @@
 
         <input type="text" placeholder="search images" id="search-box">
         
-        <input id="uploadImage" type="file" name="queryImage" onchange="PreviewImage();" />
         <img id="uploadPreview"  />
 
         <div class="image-container">
-            <!-- <div class="image" data-title="cute">
-                <img src="images/1.jpg" alt="">
-                <h3>cute</h3>
-            </div>
-
             <div class="image" data-title="cute">
                 <img src="images/1.jpg" alt="">
                 <h3>cute</h3>
@@ -30,24 +24,18 @@
             <div class="image" data-title="cute">
                 <img src="images/1.jpg" alt="">
                 <h3>cute</h3>
-            </div> -->
+            </div>
+
+            <div class="image" data-title="cute">
+                <img src="images/1.jpg" alt="">
+                <h3>cute</h3>
+            </div>
             
             
         </div>
     </div>
-  <script type="text/javascript">
-      function PreviewImage() {
-          var oFReader = new FileReader();
-          oFReder.readAsDataURL(document.getElementById("uploadImage").files[0]);
-  
-          oFReader.onload = function (oFREvent) {
-              document.getElementById("uploadPreview").src = oFREvent.target.result;
-          };
-      };
-  
-  </script>
 
-<!-- <script>
+<script>
   let searchBox = document.querySelector('#search-box');
   let images = document.querySelectorAll('.container .image-container .image');
 
@@ -64,6 +52,6 @@
       }
     });
   };
-</script> -->
+</script>
 </body>
 </html>
