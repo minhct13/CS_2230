@@ -1,57 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.min.css">
 </head>
 <body>
-    <div class="container">
-        <h3 class="heading">CS 419 - visual information retrieval</h3>
-
-        <input type="text" placeholder="search images" id="search-box">
-        
-        <img id="uploadPreview"  />
-
-        <div class="image-container">
-            <div class="image" data-title="cute">
-                <img src="images/1.jpg" alt="">
-                <h3>cute</h3>
-            </div>
-
-            <div class="image" data-title="cute">
-                <img src="images/1.jpg" alt="">
-                <h3>cute</h3>
-            </div>
-
-            <div class="image" data-title="cute">
-                <img src="images/1.jpg" alt="">
-                <h3>cute</h3>
-            </div>
-            
-            
-        </div>
+  <div class="container">
+    <div>
+      <img src="/images/bg-2.jpg" alt="" id="image">
     </div>
+  </div>
+  <script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
 
-<script>
-  let searchBox = document.querySelector('#search-box');
-  let images = document.querySelectorAll('.container .image-container .image');
-
-  searchBox.oninput = () =>{
-    images.forEach(hide => hide.style.display = 'none');
-    let value = searchBox.value;
-    images.forEach(filter =>{
-      let title = filter.getAttribute('data-title');
-      if(title == value){
-        filter.style.display='block';
-      }
-      if(searchBox.value==''){
-        filter.style.display='block';
-      }
+  <script>
+    const img = document.getElementById("image")
+    cropper = new Cropper(img, {
+        aspectRatio: 0,
+        viewMode: 0,    
     });
-  };
-</script>
+  </script>
 </body>
 </html>

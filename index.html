@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag to upload</title>
+    <title>CS 419</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
-
     </style>
+    <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.min.css">
 </head>
-<body class="bg-[url('images/2.jpg')] h-screen bg-no-repeat bg-cover ">
-    <div class="font-semibold pt-5 text-base space-y-6 text-base text-white leading-7 text-4xl text-center">
+<body class="bg-[url('images/bg-2.jpg')] h-screen bg-no-repeat bg-cover ">
+    <div class="overflow-y-auto h-32 font-semibold pt-5 text-base space-y-6 text-base text-white leading-7 text-4xl text-center">
         CS 419 - Visual Information Retrieval</div>
-
         <div class="flex flex-col items-center justify-center mt-24">
             <div class="mx-auto drag-area max-w-md text-white w-full lg:w-88 rounded-2xl border-2 border-dashed border-neural-5 p-6 flex flex-col items-center justify-center">
-                <header class="text-lg"> Kéo thả để tải ảnh hoặc chọn ảnh</header>
-                <span class="my-3 text-sm">Hoặc</span>
-                <button class="px-4 py-2 rounded bg-neutral-100 text-blue-700">Chọn ảnh</button>
+                <header class="text-lg"> Drag to upload</header>
+                <span class="my-3 text-sm">OR</span>
+                <button class="px-4 py-2 rounded bg-neutral-100 text-blue-700">Upload image</button>
                 <input type="file" hidden name="" id ="">
             </div>
-            <button class="mx-auto px-4 py-2 rounded bg-neutral-100 text-blue-700 mt-2 ">Submit</button>
+            <div id="outer">
+                <button id="btn-1" class="mx-auto px-4 py-2 rounded bg-neutral-100 text-blue-700 mt-2 ">Submit</button>
+                <button id="btn-2" class=" px-4 py-2 rounded bg-neutral-100 text-blue-700 mt-2 ">Refresh</button>
+              </div>
+            
+              <div class="absolute bottom-10 container py-400 flex rounded-2xl border-2  border-neural-5 p-5  ">
+                <!-- <button id="crop-btn">ACLSS</button> -->
+                <div id="crop-img" class="outter">
+                    <img src="" id="img-to-crop" alt="">
+                </div>
+              </div>
         </div>
         
-
+    <script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
