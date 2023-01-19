@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.min.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <script>
+    const response = await fetch('http://', {
+      method: 'POST',
+      body: myBody, // string or object
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const myJson = await response.json();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <div>
+  <div class="grid grid-cols-2 gap-8 h-screen;">
+    <div class="flex flex-col items-center justify-center bg-[#202124]">
       <img src="/images/bg-2.jpg" alt="" id="image">
     </div>
-  </div>
-  <script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
+    
+    <div style="
+        display: flex;
+        flex-wrap: wrap;
+        gap:10px;
+      " id="a" />
+    </div>
 
   <script>
-    const img = document.getElementById("image")
-    cropper = new Cropper(img, {
-        aspectRatio: 0,
-        viewMode: 0,    
-    });
+    const a = document.getElementById("a")
+    for (let i = 0; i < 15; ++i) {
+      const x = document.createElement("img")
+      x.src = "/images/bg-2.jpg"
+      x.style = `border-radius: 10px 10px 12px 10px;
+      height: 150px;
+      margin: 0;
+      object-fit: cover;
+      width: 150px;`
+      a.appendChild(x)
+    }
+
   </script>
 </body>
+
 </html>
