@@ -5,19 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
-  <script>
-    const response = await fetch('http://', {
-      method: 'POST',
-      body: myBody, // string or object
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    const myJson = await response.json();
-  </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
   <style type="text/tailwindcss">
   </style>
 </head>
@@ -25,7 +14,7 @@
 <body>
   <div class="grid grid-cols-2 gap-8 h-screen;">
     <div class="flex flex-col items-center justify-center bg-[#202124]">
-      <img src="/images/bg-2.jpg" alt="" id="image">
+      <img alt="" id="image">
     </div>
     
     <div style="
@@ -36,10 +25,22 @@
     </div>
 
   <script>
+    let queryImage = localStorage.getItem('queryImage');
+    const q = document.getElementById('image');
+    q.src = queryImage
+    
+    //const response = await fetch('http://', {
+      //method: 'POST',
+      //body: myBody, // string or object
+      //headers: {
+       // 'Content-Type': 'application/json'
+     // }
+    //});
+    //const myJson = await response.json();
     const a = document.getElementById("a")
-    for (let i = 0; i < 15; ++i) {
+    for (let i = 0; i < 16; ++i) {
       const x = document.createElement("img")
-      x.src = "/images/bg-2.jpg"
+      x.src = queryImage
       x.style = `border-radius: 10px 10px 12px 10px;
       height: 150px;
       margin: 0;
@@ -47,7 +48,6 @@
       width: 150px;`
       a.appendChild(x)
     }
-
   </script>
 </body>
 

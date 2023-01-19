@@ -35,6 +35,9 @@ dropArea.addEventListener('drop', (event) => {
     showFile(file);
 })
 
+
+let queryImage = NaN
+let cropper = NaN
 function showFile(file) {
     const fileType = file.type;
     const validExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
@@ -50,10 +53,14 @@ function showFile(file) {
                 dropArea.removeChild(dropArea.lastChild);
             }
             dropArea.appendChild(imgTag)
-            cropper = new Cropper(imgTag, {
-                aspectRatio: 0,
-                viewMode: 0,
-            });
+            var options = {
+                dragMode: 'move',
+                viewMode: 2,
+                modal: false,
+                background: false,
+            }
+            cropper = new Cropper(imgTag, options);
+            
         }
         fileReader.readAsDataURL(file);
     }
@@ -69,21 +76,14 @@ const submit_btn = document.getElementById('btn-1')
 const refresh_btn = document.getElementById('btn-2')
 
 submit_btn.addEventListener('click', () => {
-    const file = origin_image
-    window.open("/home.html", "_self")
-    show(file)
+    queryImage = cropper.getCroppedCanvas().toDataURL("image/png");
+    // queryImage = btoa(queryImage)
+    localStorage.setItem('queryImage', queryImage);
+    window.open("/query.html", "_self")
+
+
 })
 
-function show(file) {
-    const fileReader = new FileReader();
-    fileReader.onload = () => {
-        const fileUrl = fileReader.result;
-        ori_img.src = fileUrl;
-        console.log(ori_img)
-        // ori_img.style.display = "block";
-    }
-    fileReader.readAsDataURL(file);
-}
 
 refresh_btn.addEventListener('click', () => {
     location.reload();
