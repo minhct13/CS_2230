@@ -14,7 +14,7 @@ ENVIRONMENT_HOST = environ.get("APP_HOST")
 bind = "{}:{}".format(ENVIRONMENT_HOST, ENVIRONMENT_PORT)
 reload = ENVIRONMENT_DEBUG
 max_requests = 1000
-timeout = 300
+timeout = 0
 worker_connections = 1000
 capture_output = False
 

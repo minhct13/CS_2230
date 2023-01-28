@@ -27,27 +27,42 @@
   <script>
     let queryImage = localStorage.getItem('queryImage');
     const q = document.getElementById('image');
-    q.src = queryImage
+    q.src = queryImage;
     
-    //const response = await fetch('http://', {
-      //method: 'POST',
-      //body: myBody, // string or object
-      //headers: {
-       // 'Content-Type': 'application/json'
-     // }
-    //});
-    //const myJson = await response.json();
-    const a = document.getElementById("a")
-    for (let i = 0; i < 16; ++i) {
-      const x = document.createElement("img")
-      x.src = queryImage
-      x.style = `border-radius: 10px 10px 12px 10px;
-      height: 150px;
-      margin: 0;
-      object-fit: cover;
-      width: 150px;`
-      a.appendChild(x)
+    
+    
+    
+    const url = "http://localhost:8000/app/v1/query"
+    const body = JSON.stringify({'base64':queryImage.replace("data:image/png;base64,","")});
+    
+
+
+    function httpQuery(url, callback){
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) callback(xmlHttp);
+      };
+      xmlHttp.open("POST",url, true);
+      xmlHttp.setRequestHeader('Content-type', 'application/json');
+      xmlHttp.send(body);
     }
+
+    httpQuery(url, (data) =>{
+      let resultImages = JSON.parse(data.response).message
+      const a = document.getElementById("a");
+      for (let i = 0; i < resultImages.length; ++i) {
+        const x = document.createElement("img");
+        x.src = resultImages[i];
+        x.style = `border-radius: 10px 10px 12px 10px;
+        height: 150px;
+        margin: 0;
+        object-fit: cover;
+        width: 150px;`
+        a.appendChild(x)
+    }
+    })
+
+    
   </script>
 </body>
 

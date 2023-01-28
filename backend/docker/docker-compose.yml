@@ -15,6 +15,7 @@ services:
     env_file: .env
     volumes:
         - ../log:/var/log
+        - ../../data:/backend/data
 
 networks:
   host:

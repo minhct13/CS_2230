@@ -81,7 +81,6 @@ submit_btn.addEventListener('click', () => {
     localStorage.setItem('queryImage', queryImage);
     window.open("/query.html", "_self")
 
-
 })
 
 
