@@ -16,7 +16,7 @@ def save_image_base64(image_base64):
         f.write(imgdata)
     return image_file
 
-def query_image(net, image, n=16):
+def query_image(net, image):
     # save query image to disk
     image_file = save_image_base64(image)
     
@@ -40,7 +40,8 @@ def query_image(net, image, n=16):
 
     res = []
 
-    for i in ranks[:n]:
+    num_images = current_app.config["NUM_IMAGE"]
+    for i in ranks[:num_images]:
         image = images[i[0]]
         with open(image, "rb") as f:
             encoded_string= 'data:image/png;base64,'+\
