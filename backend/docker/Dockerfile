@@ -16,7 +16,7 @@ RUN apt-get install -y --no-install-recommends libgl1 libglib2.0-0 dos2unix
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --default-timeout=900 --no-cache-dir -r requirements.txt
 
 WORKDIR /backend
 COPY . /backend
