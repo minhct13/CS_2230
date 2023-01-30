@@ -8,6 +8,8 @@ import base64
 
 
 def save_image_base64(image_base64):
+    if not os.path.isdir(current_app.config['QUERY_PATH']):
+        os.makedirs(current_app.config['QUERY_PATH'])
     imgdata = base64.b64decode(image_base64)
     image_file = os.path.join(
         current_app.config['QUERY_PATH'],
