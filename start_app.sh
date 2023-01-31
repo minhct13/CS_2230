@@ -7,7 +7,7 @@ pip install gdown
 cd ./docker
 if [ ! -f "backend.tar" ]; then
     echo "========================= [Downloading backend docker image ...] ========================="
-    gdown 1AacIr4gZh_Utq1R2Pro0OKK3Rh8XjWpB;
+    gdown 1hsHOtxf2KiQO_Hn2K1A4xjdRclAPWSQ4;
 fi
 
 echo "========================= [Loading docker image ...] ========================="
