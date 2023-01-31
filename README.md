@@ -5,8 +5,8 @@
 ## Prerequisites
 In order to run this app you will need:
 
-1. Docker
-1. WSL2
+1. Docker + WSL2
+1. pip
 1. All the rest (data + networks) is automatically downloaded with our scripts
 
 
