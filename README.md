@@ -15,7 +15,7 @@ In order to run this app you will need:
 - Step 0: Download and install VSCode, install "Live server" extension to host the UI, start docker desktop
 - Step 1: Clone the repo
 - Step 2: Run **"cd CS419"** to access into the repo's directory
-- Step 3: Run **"sudo bash start_app.sh"** to start the app image and automatically download the dataset to test (default is oxford5k dataset)
+- Step 3: Run **"source start_app.sh"** to start the app image and automatically download the dataset to test (default is oxford5k dataset)
 - Step 4: Open file index.html with Live server extension to start testing
 - Step 5: Choose image, crop the interested area and hit the submit, then wait about a second to see the retrieved result
 
