@@ -14,8 +14,8 @@ In order to run this app you will need:
 
 - Step 0: Download and install VSCode, install "Live server" extension to host the UI, start docker desktop
 - Step 1: Clone the repo
-- Step 2: Run **"cd CS419"** to access into the repo's directory
-- Step 3: Run **"sudo bash start_app.sh"** to start the app image and automatically download the dataset to test (default is oxford5k dataset)
+- Step 2: Run ```cd CS419``` to access into the repo's directory
+- Step 3: Run ```source start_app.sh``` to start the app image and automatically download the dataset to test (default is oxford5k dataset)
 - Step 4: Open file index.html with Live server extension to start testing
 - Step 5: Choose image, crop the interested area and hit the submit, then wait about a second to see the retrieved result
 
@@ -25,6 +25,6 @@ In order to run this app you will need:
 
 - Step 1: Place dataset folder which contains images into backend/data
 - Step 2: Adjust the DATASET_PATH to recently added image folder
-- Step 3: Run **"cd backend; docker-compose -f docker/docker-compose.yml up --build"** to rebuild and start backend
-- Step 4: Run **"curl --location --request POST 'localhost:8000/app/v1/extract-feature'"** to start extracting dataset
+- Step 3: Run ```cd backend; docker-compose -f docker/docker-compose.yml up --build``` to rebuild and start backend
+- Step 4: Run ```curl --location --request POST 'localhost:8000/app/v1/extract-feature'``` to start extracting dataset
 - Step 5: If extract process successfully, you can start tesing new dataset and images
