@@ -1,28 +1,31 @@
 #!/bin/bash
 
-cd backend/;
-
 pip install gdown
+pip install --upgrade --no-cache-dir gdown
+sudo apt-get update
+sudo apt-get install unzip
 
-cd ./docker
+cd backend/docker
 if [ ! -f "backend.tar" ]; then
     echo "========================= [Downloading backend docker image ...] ========================="
-    gdown 1hsHOtxf2KiQO_Hn2K1A4xjdRclAPWSQ4;
+    gdown 1-JpanCT9FgxubOELXBJUAtatfRzq_NZ5;
+    # 
 fi
 
 echo "========================= [Loading docker image ...] ========================="
-docker load -i cs419.tar;
+docker load -i backend.tar;
 docker-compose -f docker-compose.yml up -d
 
 cd ../../data;
 if [ ! -f "oxford5k.zip" ]; then
     echo "========================= [Downloading $ unzip oxford5k dataset ...] ========================="
-    gdown 1g3wiFb9fEv7Zt8KTyEJJnU0jcbzgvIX3;
+    gdown 1ZM0jvRZGYtPvqbJ44RviH1dYSZuzB9tV;
+    # https://drive.google.com/file/d/1ZM0jvRZGYtPvqbJ44RviH1dYSZuzB9tV/view?usp=share_link
 fi
 
 if [ ! -d "oxford5k/jpg" ]; then
-    apt-get install unzip
     unzip oxford5k.zip
 fi
+cd ..
 
 echo "========================= [Finished.] ========================="

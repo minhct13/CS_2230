@@ -16,4 +16,4 @@ class Config():
     FEATURE_PATH = environ.get("FEATURE_PATH")
     QUERY_PATH = environ.get("QUERY_PATH")
     IMAGEFILE_PATH=environ.get("IMAGEFILE_PATH")
-    NUM_IMAGE=environ.get("NUM_IMAGE")
+    NUM_IMAGE= int(environ.get("NUM_IMAGE"))
