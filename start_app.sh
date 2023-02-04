@@ -8,7 +8,7 @@ sudo apt-get install unzip
 cd backend/docker
 if [ ! -f "backend.tar" ]; then
     echo "========================= [Downloading backend docker image ...] ========================="
-    gdown 1-JpanCT9FgxubOELXBJUAtatfRzq_NZ5;
+    gdown 1cawb5A4MXuGYDS3KCFoSfPd3NqLY1UEq;
     # 
 fi
 
