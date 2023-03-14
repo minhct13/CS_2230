@@ -12,9 +12,9 @@ def query():
     """
     image = request.json.get("base64", "")
     res, status_code = query_image(
+                            state=model.state,
                             net=model.net,
                             image=image)
-    
     return make_response(
          jsonify({"message": res}),
          status_code

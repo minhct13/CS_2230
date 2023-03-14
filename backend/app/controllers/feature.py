@@ -12,6 +12,7 @@ def extract_feature():
     """
     dataset_dir = current_app.config['DATASET_PATH']
     res, status_code = extract_dataset(
+     state=model.state,
      net=model.net,
      dataset_dir=dataset_dir)
     

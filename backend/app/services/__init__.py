@@ -16,9 +16,10 @@ class Model:
         net_params['mean'] = state['meta']['mean']
         net_params['std'] = state['meta']['std']
         net_params['pretrained'] = False
+        net_params['whiten_ss'] = state['meta']['Lw']['retrieval-SfM-120k']['ss']
 
         # load network
+        self.state = state
         self.net = init_network(net_params)
         self.net.load_state_dict(state['state_dict'])
-
 model = Model()
