@@ -1,4 +1,4 @@
-# This is course CS 419 source code - Image Retrieval
+# This is course CS  2230 source code - Image Retrieval
 
 **DESCRIPTION:** This project is using pretrained model at: https://github.com/filipradenovic/cnnimageretrieval-pytorch on Oxford5k dataset - A dataset of building, so that it would only perform accurately with building images when testing.
 
