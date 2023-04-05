@@ -1,14 +1,12 @@
 version: '3.7'
 
-name: "Backend"
-
 services:
-  app:
+  cs2203:
     build:
       context: ..
       dockerfile: docker/Dockerfile
       network: host
-    container_name: app
+    container_name: cs2203
     ports:
       - 8000:8000
     restart: unless-stopped

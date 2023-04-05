@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 2203</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+    </style>
+    <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.min.css">
+    <script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
+</head>
+
+<body class="bg-[url('images/bg-2.jpg')] h-screen bg-no-repeat bg-cover ">
+    <div
+        class="overflow-y-auto h-32 font-semibold pt-5 text-base space-y-6 text-base text-white leading-7 text-4xl text-center">
+        CS 2203 - Visual Information Retrieval</div>
+    <div class="flex flex-col items-center justify-center">
+        <div style="max-height: 72vh;"
+            class="mx-auto object-scale-down drag-area max-w-md text-white w-full lg:w-88 rounded-2xl border-2 border-dashed border-neural-5 p-6 flex flex-col items-center justify-center">
+            <header class="text-lg"> Drag to upload</header>
+            <span class="my-3 text-sm">OR</span>
+            <button class="px-4 py-2 rounded bg-neutral-100 text-blue-700">Upload image</button>
+            <input type="file" hidden name="" id="">
+        </div>
+        <!-- <div id="outer">
+            <button id="btn-1" class="mx-auto px-4 py-2 rounded bg-neutral-100 text-blue-700 mt-2 ">Submit</button>
+            <button id="btn-2" class=" px-4 py-2 rounded bg-neutral-100 text-blue-700 mt-2 ">Refresh</button>
+        </div> -->
+        <div class="flex flex-col items-center justify-center my-6">
+            <div style="max-height: 72vh;">
+                <button
+                    id="btn-1"
+                    class="bg-blue-500 mx-1 hover:bg-blue-400 text-white font-bold py-1 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                    ResNet101
+                </button>
+                <button
+                    id="btn-2"
+                    class="bg-blue-500 mx-1 hover:bg-blue-400 text-white font-bold py-1 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                    VGG
+                </button>
+                <button
+                    id="btn-3"
+                    class="bg-blue-500 mx-1 hover:bg-blue-400 text-white font-bold py-1 px-2 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                    SIFT
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
